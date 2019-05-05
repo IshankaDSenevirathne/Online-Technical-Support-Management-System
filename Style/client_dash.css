@@ -1,0 +1,84 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top:10%;
+    margin-left:20%;
+    margin-right:20%;
+    margin-bottom:10%;
+    background-color:#F3F3F3;
+}
+.navbar{
+    height:43px;
+    background-color:white;
+    border-bottom:1px solid #EDEDED ;
+    color:#979797;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    overflow:hidden;
+
+}
+.navbar input{
+    width:50%;
+    outline-color:black;
+    background-color:white;
+    padding-top:4px;
+    border:0.5px solid #E3E3E3;
+    border-radius:4px;
+    padding-left:4px;
+    margin-right:80px;
+    padding-bottom:4px;
+    font-size:15px;
+
+}
+.navbar img{
+    cursor:pointer;
+}
+.navbar a{
+    padding-right:10px;
+    text-align:center;
+}
+.navbar a:link,a:visited{
+    text-decoration: none;
+    color:#979797;
+}
+.navbar a:hover{
+    color:black;
+    cursor: pointer;
+}
+.navbar h3{
+    margin-right:15px;
+    padding-left:10px;
+    
+}
+.navbar h3:hover{
+    color:#8C8C8C;
+    cursor:pointer;
+}
+table{
+    height:700px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    /* margin-left:10px; */
+    text-align: left;
+}
+input,textarea,select{
+    outline-color:black;
+    border:1px solid black;
+    padding:5px 5px 5px 5px;
+    margin-bottom:20px;
+    margin-top:10px;
+}
+.dash_logo{
+    width:45%;
+    height:1110px;
+    float:right;
+    background-image:url('../Images/jose-duarte-317893-unsplash.jpg');
+    background-position: center;
+    background-color: #747474;
+    background-repeat: no-repeat;
+    /* padding-top:10px; */
+    padding-left:10px; 
+    /* padding-right:10px; */
+    /* border:1px solid grey; */
+}

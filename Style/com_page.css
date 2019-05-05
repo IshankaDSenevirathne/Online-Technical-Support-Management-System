@@ -1,0 +1,87 @@
+body{
+    margin-top:5%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:#F3F3F3;
+    margin-left:20%;
+    margin-right:20%;
+    margin-bottom:10%;    
+}
+.navbar{
+    height:43px;
+    background-color:white;
+    border-bottom:1px solid #EDEDED;
+    color:#979797;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    overflow:hidden;
+
+}
+.navbar input{
+    width:50%;
+    outline-color:black;
+    background-color:white;
+    padding-top:4px;
+    border:0.5px solid #E3E3E3;
+    padding-left:4px;
+    margin-right:80px;
+    padding-bottom:4px;
+    font-size:15px;
+
+}
+.navbar img{
+    cursor:pointer;
+}
+.navbar a{ 
+    padding-right:10px;
+    text-align:center;
+}
+.navbar a:hover{
+    color:black;
+    cursor: pointer;
+}
+.navbar h3{
+    margin-right:15px;
+    padding-left:10px;
+    
+}
+.navbar h3:hover{
+    color:#8C8C8C;
+    cursor:pointer;
+}
+.title{
+    background-color:#D5F5E3; 
+    display:inline;
+}
+.content{
+    background-color:#DAF7A6;
+}
+.comment{
+    background-color:#C3E6EF;
+}
+.answer{
+    background-color:#EDEDED;
+    padding:10px 5px 10px 5px;
+    margin-top:15px; 
+    text-align: justify;
+}
+textarea{
+    width:100%;
+    height:80px;
+}
+.content_section{
+    background-color:white;
+    padding:10px 20px 10px 20px;
+}
+.btn{
+    width:80px;
+    height:25px;
+    margin:10px 0px 30px 0px;
+    background-color: #CCCBF1;
+    border:none;
+    outline:none;
+}
+.btn:hover{
+    border:1px solid grey;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>login</title>
+        <link rel="stylesheet" href="./Style/style_service_provider_login.css">
+    </head>
+    <body>
+        <div>
+            <div class='navbar'>
+                <h3 style="display:inline;"><a align="center"><img src='./Images/kisspng-robotics-internet-.png' align='center'><font color='#747474'><b>Tech<font color='#5274CD' size='5'>NoBoT</b></font></font></a></h3>
+                <a>EXPLORE</a>
+                <a>INNOVATE</a>
+                <a>FORUM</a>
+                <a>USER GUIDE</a>
+                <a>ABOUT</a>
+                <input type='text' placeholder='Search...'>
+                <a>PROFILE</a>
+                <a>NOTIFICATIONS</a>
+            </div>
+        </div>
+        <form method='post' action='./includes/sp_login_handle.php'>
+            <center>
+                <img src='./Images/icon-installation2.png'>
+                <div class="login_box">
+                    <div>
+                        <h1>LOGIN</h1>
+                    </div>
+                    <div class="textbox">
+                        <input type="textbox" placeholder="ENTER USERNAME" name="sp_name"> 
+                    </div>
+                    <div class="textbox">
+                        <input type="password" placeholder="ENTER PASSWORD" name="sp_password">
+                    </div>
+                    <div>
+                        <button class="btn" type="submit" name="submit">LOGIN</button>
+                    </div>
+                    <div>
+                        <h4>SIGN IN FREE TO GET SOLUTIONS FROM PROFESSIONALS</h4>
+                    </div>               
+                </div>
+            </center>
+        </form>
+    </body>
+</html>

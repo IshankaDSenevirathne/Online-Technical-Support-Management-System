@@ -1,0 +1,107 @@
+body{
+    margin-top:5%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:#F3F3F3;
+    margin-left:20%;
+    margin-right:20%;
+    margin-bottom:10%;    
+}
+.navbar{
+    height:43px;
+    background-color:white;
+    border-bottom:1px solid #EDEDED;
+    color:#979797;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    overflow:hidden;
+
+}
+.navbar input{
+    width:50%;
+    outline-color:black;
+    background-color:white;
+    padding-top:4px;
+    border:0.5px solid #E3E3E3;
+    padding-left:4px;
+    margin-right:80px;
+    padding-bottom:4px;
+    font-size:15px;
+
+}
+.navbar img{
+    cursor:pointer;
+}
+.navbar a{ 
+    padding-right:10px;
+    text-align:center;
+}
+.navbar a:hover{
+    color:black;
+    cursor: pointer;
+}
+.navbar h3{
+    margin-right:15px;
+    padding-left:10px;
+    
+}
+.navbar h3:hover{
+    color:#8C8C8C;
+    cursor:pointer;
+}
+.grid{
+    display:grid;
+    grid-template-columns:33.33% 33.33% 33.33%;
+    overflow:auto;
+}
+.signin_client{
+    border:1px solid whitesmoke;
+    text-align:center;
+    margin-right:10px;
+    background-color:white;
+
+}
+.signin_sp{
+    border:1px solid whitesmoke;
+    text-align:center;
+    margin-right:10px;
+    background-color:white;
+}
+.signin_admin{
+    border:1px solid whitesmoke;
+    text-align:center;
+    background-color:white;
+}
+.signin_client button:hover,.signin_sp button:hover,.signin_admin button:hover{
+    background-color:#5F88F3;
+}
+.signin_client button,.signin_sp button,.signin_admin button{
+    background-color:#EDEDED;
+    border:none;
+    width:120px;
+    height:30px;
+    outline:none;
+    cursor:pointer;
+}
+.dash_promo{
+    background-repeat: no-repeat;
+    background-color:white;
+    height:337px;
+}
+.section{
+    border:2px solid #EDEDED;
+    background-color:white;
+    padding:10px 10px 10px 10px;
+    margin-top:20px;
+    cursor:pointer;
+
+}
+.section h2{
+    display:inline;
+}
+.section:hover{
+    border-right:10px solid #5274CD;
+    color:#5274CD;
+}
+

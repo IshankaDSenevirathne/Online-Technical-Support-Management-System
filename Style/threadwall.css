@@ -1,0 +1,109 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top:10%;
+    margin-left:20%;
+    margin-right:20%;
+    margin-bottom:10%;
+    background-color:#F3F3F3;
+}
+.navbar{
+    height:43px;
+    background-color:white;
+    border-bottom:1px solid #EDEDED;
+    color:#979797;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    overflow:hidden;
+
+}
+.navbar input{
+    width:50%;
+    outline-color:black;
+    background-color:white;
+    padding-top:4px;
+    border:0.5px solid #E3E3E3;
+    padding-left:4px;
+    margin-right:80px;
+    padding-bottom:4px;
+    font-size:15px;
+
+}
+.navbar img{
+    cursor:pointer;
+}
+.navbar a{ 
+    padding-right:10px;
+    text-align:center;
+}
+.navbar a:hover{
+    color:black;
+    cursor: pointer;
+}
+.navbar h3{
+    margin-right:15px;
+    padding-left:10px;
+    
+}
+.navbar h3:hover{
+    color:#8C8C8C;
+    cursor:pointer;
+}
+h2{
+    background-color:#CCCBF1;
+    height:60px;
+    padding-top:30px;
+}
+.threadTitle{
+    width:100%;
+    height:25px;
+    margin-bottom:5px;
+}
+.threadbox{
+    width:100%;
+    height:100px;
+}
+.ground_style_solved{
+    height:auto;
+    background-color:#EDEDED;
+    cursor:pointer;
+    margin-top:10px;
+    padding-left:5px;
+    border-left:10px solid  #3BE791;
+}
+.ground_style_solved a:link,a:visited{
+    text-decoration: none;
+    color:black;
+}
+.ground_style_unsolved{
+    height:auto;
+    background-color:#EDEDED;
+    cursor:pointer;
+    margin-top:10px;
+    padding-left:5px;
+    border-left:10px solid  #ED7575;
+}
+.ground_style_solved:hover{
+    /* background-color: #3BE791; */
+    border-right:5px solid  #3BE791;
+}
+.ground_style_unsolved a:visited,a:link{
+    text-decoration:none;
+    color:black;
+}
+.ground_style_unsolved:hover{
+    /* background-color:#ED7575; */
+    border-right:5px solid  #ED7575;
+}
+.btn{
+    width:80px;
+    height:25px;
+    margin:10px 0px 30px 0px;
+    background-color: #CCCBF1;
+    border:none;
+    outline:none;
+}
+.btn:hover{
+    border:0.5px solid grey;
+}
