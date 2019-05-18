@@ -12,8 +12,8 @@ if(isset($_POST['post_thread'])){
     if(!$connection){
         die('Database connection error');
     }
-    $thread=$_POST['thread'];
-    $threadTitle=$_POST['threadTitle'];
+    $thread=mysqli_real_escape_string($connection,$_POST['thread']);
+    $threadTitle=mysqli_real_escape_string($connection,$_POST['threadTitle']);
     $category=$_POST['category'];
     $clientId=$_REQUEST['id'];
     $query="SELECT * FROM client_data WHERE clientId=$clientId";

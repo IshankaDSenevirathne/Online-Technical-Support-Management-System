@@ -85,16 +85,17 @@ h2{
     border-left:10px solid  #ED7575;
 }
 .ground_style_solved:hover{
-    /* background-color: #3BE791; */
-    border-right:5px solid  #3BE791;
+    border-left:10px solid  #28B463;
+    font-weight: bold;
 }
 .ground_style_unsolved a:visited,a:link{
     text-decoration:none;
     color:black;
 }
 .ground_style_unsolved:hover{
-    /* background-color:#ED7575; */
-    border-right:5px solid  #ED7575;
+    border-left:10px solid  #C70039;
+    font-weight: bold;
+
 }
 .btn{
     width:80px;
