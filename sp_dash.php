@@ -39,7 +39,7 @@
                 <a>USER GUIDE</a>
                 <a>ABOUT</a>
                 <input type='text' placeholder='Search...'>
-                <a>PROFILE</a>
+                <a>PROJECTS</a>
                 <a>NOTIFICATIONS</a>
             </div>
                 <div>
@@ -108,11 +108,14 @@
                     <div style='background-color:#F6E0E0;border:none'>
                         <h4>CLOSED</h4>
                     </div>
+                    <div>
+                        <button class='add_project' onclick="window.location='./add_project.php'">MANAGE</button>
+                    </div>
                     <hr><h3 align='center'>SERVICE ECONOMY</h3>
                     <div  style='background-color:#E6E6E6;border:none'>
                         <p><b><i>Welcome to tekCarpet!</i></b><br>tekCarpet keeps you in touch with the worlds bleeding edge technology and lets you to hire worlds best Technical Service Providers,Enthusiasts to help you resolve your technical problems efficiently!</p>
                     </div>
-                    <hr><h3 align='center'>CLIENT FEEDBACK</h3>
+                    <hr><h3 align='center'>SERVICE STATUS</h3>
                     <div  style='background-color:#E6E6E6;border:none'>
                         <p><b><i>Welcome to tekCarpet!</i></b><br>tekCarpet keeps you in touch with the worlds bleeding edge technology and lets you to hire worlds best Technical Service Providers,Enthusiasts to help you resolve your technical problems efficiently!</p>
                     </div>

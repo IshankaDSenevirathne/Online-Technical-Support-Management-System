@@ -79,3 +79,12 @@ input,textarea,select{
     /* padding-right:10px; */
     /* border:1px solid grey; */
 }
+.add_project{
+    height:25px;
+    background-color: #D1DCF2;
+    border:none;
+    outline:none;
+}
+.add_project:hover{
+    background-color:#77A6FF;
+}

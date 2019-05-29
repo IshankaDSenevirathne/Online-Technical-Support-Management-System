@@ -54,15 +54,9 @@
                 $data_sp=mysqli_fetch_assoc($result2);
                 echo "<div class='answer'>".$data['post'].'<br><br>
                 <font color=#9A9A9A size=2><b>Author infomation:</b><br>
-                <label><img src='."./Images/profile-icon-png-9012.png".'>  :'.$data_sp['sp_name'].'</label> <br><label><img src='."./Images/email-icon-1202.png".'>  :'.$data_sp['sp_email'].'</label> <br><label><img src='."./Images/phone-icon-9452.png".'>  :'.$data_sp['sp_contact'].'</label> <br><label><img src='."./Images/profile-icon-png-9212.png".'>  :'.'</label><a href='.'https://www.google.com/'.'>www.google.com</a></font><br></div>';
+                <label><img src='."./Images/profile-icon-png-9012.png".'>  :'.$data_sp['sp_name'].'</label> <br><label><img src='."./Images/email-icon-1202.png".'>  :'.$data_sp['sp_email'].'</label> <br><label><img src='."./Images/phone-icon-9452.png".'>  :'.$data_sp['sp_contact'].'</label> <br><label><img src='."./Images/profile-icon-png-9212.png".'>  :'.'</label><a href='.'https://www.google.com/'.'>www.google.com</a><br><label>Rating:</label></font><br><button>HIRE</button></div>';
             }
             ?>
-            <br>
-            <a><!--serviceprovider name here a link--></a> <a><!--serviceprovider email here a link--></a><a><!--serviceprovider contact here a link--></a> <a><!--serviceprovider website here a link--></a><br><hr>
-            <br>
-            <label><b>SUBMIT YOUR ANSWER/COMMENT</b>(You have to be a service provider in order to comment or post an anwser in this section):</label><br>
-            <textarea name='sp_comment' placeholder='Enter your comments here'></textarea><br>
-            <button class='btn' name='submit_post'>SUBMIT</button>
         </div>
     </body>
 </html>
