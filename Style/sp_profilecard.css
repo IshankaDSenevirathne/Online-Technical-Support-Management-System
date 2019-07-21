@@ -1,0 +1,85 @@
+body{
+    margin-top:5%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:#F3F3F3;
+    margin-left:20%;
+    margin-right:20%;
+    margin-bottom:10%;    
+}
+.navbar{
+    height:43px;
+    background-color:white;
+    border-bottom:1px solid #EDEDED;
+    color:#979797;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    overflow:hidden;
+
+}
+.navbar input{
+    width:50%;
+    outline-color:black;
+    background-color:white;
+    padding-top:4px;
+    border:0.5px solid #E3E3E3;
+    padding-left:4px;
+    margin-right:80px;
+    padding-bottom:4px;
+    font-size:15px;
+
+}
+.navbar img{
+    cursor:pointer;
+}
+.navbar a{ 
+    padding-right:10px;
+    text-align:center;
+}
+.navbar a:hover{
+    color:black;
+    cursor: pointer;
+}
+.navbar h3{
+    margin-right:15px;
+    padding-left:10px;
+    
+}
+.navbar h3:hover{
+    color:#8C8C8C;
+    cursor:pointer;
+}
+.title-name{
+   font-size:50px;
+   background-color:#C7ECD7;
+   display:block;
+   width:100%;
+   border-top-right-radius: 15px;
+}
+.main-container{
+    background-color:white;
+    padding:20px 20px 20px 20px;
+}
+table tbody tr td{
+    border-bottom:2px solid white;
+    border-right:2px solid white;
+    background-color:#EEEEEE;
+    height:35px;
+}
+.hire{
+    color:black;
+    width:10%;
+    height:30px;
+    padding:2px;
+    border:none;
+    margin-left:2px;
+    margin-top:15px;
+    margin-bottom:10px;
+    background-color:#C7ECD7;
+    outline:none;
+    text-decoration: none;
+}
+.hire:hover{
+    background-color:#6DE8A1;
+}

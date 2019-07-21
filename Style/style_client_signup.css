@@ -22,7 +22,7 @@ body{
     margin-bottom:20px;
     border:none;
     height:80px;
-    background-color:#EFCECE;
+    background-color:#CCCCCC;
 }
 .register input{
     margin:0% 5% 3% 5%;
@@ -101,6 +101,7 @@ body{
 .navbar a:hover{
     color:black;
     cursor: pointer;
+    border-bottom: 2px solid black;
 }
 .navbar h3{
     margin-right:15px;

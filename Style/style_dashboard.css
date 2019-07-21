@@ -83,6 +83,7 @@ body{
     height:30px;
     outline:none;
     cursor:pointer;
+    transition:0.3s;
 }
 .dash_promo{
     background-repeat: no-repeat;
@@ -95,6 +96,7 @@ body{
     padding:10px 10px 10px 10px;
     margin-top:20px;
     cursor:pointer;
+    transition: 0.2s;
 
 }
 .section h2{

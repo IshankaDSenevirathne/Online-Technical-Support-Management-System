@@ -120,7 +120,7 @@ if(isset($_POST['sort_thread'])){
                         $thread_id=$data['id'];
                         $thread_date=$data['thread_date'];
                         echo "<div align='left' class='ground_style_unsolved'>    
-                                <a href="."./com_page.php?id=".$thread_id."><i>".$threadTitle.'</i></a><br>['.$thread_date.']</div><br>';
+                                <a href="."./com_page.php?id=$thread_id"."><i>".$threadTitle.'</i></a><br>['.$thread_date.']</div><br>';
                     }
                 ?>
                 <div align='left' class='ground_style_solved'>

@@ -19,6 +19,7 @@
     $thread_title=$data['thread_title'];
     $thread_content=$data['thread'];
     $thread_date=$data['thread_date'];
+    $user_Id=$data['userId'];
 
     $query="SELECT * FROM answer_data WHERE thread_id=$thread_id";
     $result=mysqli_query($connection,$query);
@@ -54,7 +55,11 @@
                 $data_sp=mysqli_fetch_assoc($result2);
                 echo "<div class='answer'>".$data['post'].'<br><br>
                 <font color=#9A9A9A size=2><b>Author infomation:</b><br>
-                <label><img src='."./Images/profile-icon-png-9012.png".'>  :'.$data_sp['sp_name'].'</label> <br><label><img src='."./Images/email-icon-1202.png".'>  :'.$data_sp['sp_email'].'</label> <br><label><img src='."./Images/phone-icon-9452.png".'>  :'.$data_sp['sp_contact'].'</label> <br><label><img src='."./Images/profile-icon-png-9212.png".'>  :'.'</label><a href='.'https://www.google.com/'.'>www.google.com</a><br><label>Rating:</label></font><br><button>HIRE</button></div>';
+                <label><img src='."./Images/profile-icon-png-9012.png".'>  :'.$data_sp['sp_name'].'</label> <br>
+                <label><img src='."./Images/email-icon-1202.png".'>  :'.$data_sp['sp_email'].'</label> <br>
+                <label><img src='."./Images/phone-icon-9452.png".'>  :'.$user_Id.'</label> <br>
+                <label><img src='."./Images/profile-icon-png-9212.png".'>  :'.'</label><a href='."./sp_card.php?user_id=$user_Id&sp_id=$sp_Id&thread_id=$thread_id".'>Visit to hire or for more details</a><br>
+                </div>';
             }
             ?>
         </div>

@@ -47,9 +47,32 @@ $clientOccupation=$data['clientOccupation'];
                 <div> 
                     <div class='dash_logo'>
                         <h3 align='center'>NOTIFICATIONS</h3>
-                        <div  style='background-color:transparent;'>
-                            <p><b><i>Welcome to tekCarpet!</i></b><br>tekCarpet keeps you in touch with the worlds bleeding edge technology and lets you to hire worlds best Technical Service Providers,Enthusiasts to help you resolve your technical problems efficiently!</p>
-                        </div>
+                        <?php
+                            $query="SELECT jobstatus,thread_id,sp_id FROM projects WHERE client_id=$clientId";
+                            $result=mysqli_query($connection,$query);
+                            $i=0;
+                            while($data=mysqli_fetch_assoc($result)){
+                              if($i==10){
+                                  break;
+                              }
+                              $jobstatus= $data['jobstatus'];
+                              $thread_id=$data['thread_id'];
+                              $sp_id=$data['sp_id'];
+                              $query="SELECT thread FROM thread_data WHERE id=$thread_id";
+                              $result2=mysqli_query($connection,$query);
+                              $data2=mysqli_fetch_assoc($result2);
+                              $thread=$data2['thread'];
+                              $query="SELECT sp_name FROM service_provider_data WHERE sp_Id=$sp_id";
+                              $result2=mysqli_query($connection,$query);
+                              $data2=mysqli_fetch_assoc($result2);
+                              $spname=$data2['sp_name'];
+                      
+                              if($jobstatus){
+                                echo "<button class='notifications' onclick="."window.location='./includes/user_hired_projects.php?sp_id=$sp_id&thread_id=$thread_id&user_id=$clientId'".'><b>'.$spname.'</b> has accepted your job offer on the query you posted:<br><b>['.$thread.']</b></button><br>';
+                                $i++;
+                              }
+                            }
+                        ?>
                     </div>
                     <div style="height:70px;padding-left:120px;padding-top:5px;margin-bottom:15px;">
                         <h1 name='clientUsername' id='clientUsername'><?php echo 'WELCOME <font color="#28B463">'.strtoupper($clientUsername).'</font>'; ?></h1> 
@@ -110,11 +133,43 @@ $clientOccupation=$data['clientOccupation'];
                         </table>
                         <hr>
                         <h3 align='center'>THREAD HISTORY</h3>
-                        <div style='background-color:#E0F6E3;border:none'>
-                            <h4>Open Threads:</h4>
+                        <div>
+                            <h4 style='background-color:#E0F6E3;border:none'>OPEN:</h4>
+                            <?php
+                            $query="SELECT jobstatus,thread_id,sp_id FROM projects WHERE client_id=$clientId";
+                            $result=mysqli_query($connection,$query);
+                            while($data=mysqli_fetch_assoc($result)){
+                              $jobstatus= $data['jobstatus'];
+                              $thread_id=$data['thread_id'];
+                              $sp_id=$data['sp_id'];
+                              $query="SELECT thread FROM thread_data WHERE id=$thread_id";
+                              $result2=mysqli_query($connection,$query);
+                              $data2=mysqli_fetch_assoc($result2);
+                              $thread=$data2['thread'];
+                              if($jobstatus){
+                                echo "<button class='hired_active_projects' onclick="."window.location='./includes/user_hired_projects.php?sp_id=$sp_id&thread_id=$thread_id&user_id=$clientId'".">$thread<br></button>";
+                              }
+                            }
+                        ?>
                         </div>
-                        <div style='background-color:#F6E0E0;border:none'>
-                            <h4>Closed Threads:</h4>
+                        <div>
+                        <h4 style='background-color:#F6E0E0;border:none'>CLOSED</h4>
+                        <?php
+                            $query="SELECT jobstatus,thread_id,sp_id FROM projects WHERE client_id=$clientId";
+                            $result=mysqli_query($connection,$query);
+                            while($data=mysqli_fetch_assoc($result)){
+                              $jobstatus= $data['jobstatus'];
+                              $thread_id=$data['thread_id'];
+                              $sp_id=$data['sp_id'];
+                              $query="SELECT thread FROM thread_data WHERE id=$thread_id";
+                              $result2=mysqli_query($connection,$query);
+                              $data2=mysqli_fetch_assoc($result2);
+                              $thread=$data2['thread'];
+                              if(!$jobstatus){  
+                                echo "<button class='hired_closed_projects' onclick="."window.location='./includes/user_hired_projects.php?sp_id=$sp_id&thread_id=$thread_id&user_id=$clientId'".">$thread<br></button>";
+                              }
+                            }
+                        ?>
                         </div>
                     <div>
                 </div>

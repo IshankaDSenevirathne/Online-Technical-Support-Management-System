@@ -82,3 +82,47 @@ input,textarea,select{
     /* padding-right:10px; */
     /* border:1px solid grey; */
 }
+.hired_active_projects{
+    font-size: 15px;
+    width:100%;
+    background-color:white;
+    padding:10px; 
+    border:1px solid #F7F7F7;
+    outline: none;
+    cursor:pointer;
+    text-align: left;
+    transition:0.3s;
+}
+.hired_active_projects:hover{
+    border-left:10px solid #36C274;
+    background-color:#F7F7F7;
+}
+.hired_closed_projects{
+    font-size: 15px;
+    width:100%;
+    background-color:white;
+    padding:10px; 
+    border:1px solid #F7F7F7;
+    outline: none;
+    cursor:pointer;
+    text-align: left;
+    transition:0.3s;
+}
+.hired_closed_projects:hover{
+    border-left:10px solid #D65454;
+    background-color:#F7F7F7;
+}
+.notifications{
+    background-color:#F7F7F7;
+    border:1px solid #F3F3F3;
+    border-bottom-right-radius: 10px;
+    opacity:0.85;
+    margin:5px;
+    padding:5px;
+    transition:0.3s;
+}
+.notifications:hover{
+    background-color:white;
+    border-left:10px solid #36C274;
+    opacity:1;
+}

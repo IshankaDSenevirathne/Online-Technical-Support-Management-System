@@ -56,8 +56,8 @@ body{
     cursor:pointer;
 }
 table{
-    margin-bottom:210px; 
-    height:700px;
+    margin-bottom:20px; 
+    height:auto;
 }
 input,textarea,select{
     outline-color:black;
@@ -65,19 +65,6 @@ input,textarea,select{
     padding:5px 5px 5px 5px;
     margin-bottom:20px;
     margin-top:10px;
-}
-.dash_logo{
-    width:45%;
-    height:1110px;
-    float:right;
-    background-image:url('../Images/matthew-smith-5939-unsplash.jpg');
-    background-position: center;
-    background-color: #747474;
-    background-repeat: no-repeat;
-    /* padding-top:10px; */
-    padding-left:10px; 
-    /* padding-right:10px; */
-    /* border:1px solid grey; */
 }
 .add_project{
     height:25px;
@@ -87,4 +74,55 @@ input,textarea,select{
 }
 .add_project:hover{
     background-color:#77A6FF;
+}
+.notifications{
+    background-color:white;
+    padding:10px;
+    margin:5px; 
+    width:100%;
+    border:none;
+    border:1px solid #F7F7F7;
+    outline: none;
+    cursor:pointer;
+    text-align: left;
+    transition:0.3s;
+}
+.notifications:hover{
+  border-left:10px solid #5274CD;
+  background-color:#F7F7F7;
+}
+.economy{
+    border-left:1px solid black;
+    width:60%;
+    text-align: justify;
+}
+.active_projects{
+    font-size: 15px;
+    width:100%;
+    background-color:white;
+    padding:10px; 
+    border:1px solid #F7F7F7;
+    outline: none;
+    cursor:pointer;
+    text-align: left;
+    transition:0.3s;
+}
+.active_projects:hover{
+    border-left:10px solid #36C274;
+    background-color:#F7F7F7;
+}
+.closed_projects{
+    font-size: 15px;
+    width:100%;
+    background-color:white;
+    padding:10px; 
+    border:1px solid #F7F7F7;
+    outline: none;
+    cursor:pointer;
+    text-align: left;
+    transition:0.3s;
+}
+.closed_projects:hover{
+    border-left:10px solid #D65454;
+    background-color:#F7F7F7;
 }
