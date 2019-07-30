@@ -116,7 +116,6 @@ input,textarea,select{
     background-color:#F7F7F7;
     border:1px solid #F3F3F3;
     border-bottom-right-radius: 10px;
-    opacity:0.85;
     margin:5px;
     padding:5px;
     transition:0.3s;
@@ -124,5 +123,4 @@ input,textarea,select{
 .notifications:hover{
     background-color:white;
     border-left:10px solid #36C274;
-    opacity:1;
 }

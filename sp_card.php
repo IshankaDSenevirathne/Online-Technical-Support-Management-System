@@ -24,6 +24,12 @@
     $sp_country =$data['sp_country'];
     $sp_email =$data['sp_email'];
     $sp_intro =$data['sp_intro'];
+    $sp_state=$data['sp_state'];
+    $ratings=$data['total_ratings'];
+    $count=$data['review_count'];
+    $avg_rating=ceil($ratings/$count);
+    $comments=explode(',',$data['comments']);
+    unset($comments[0]);
 
 
 ?>
@@ -48,39 +54,59 @@
         <!--Service provider data-->
         <div class='main-container'>
             <label style='font-size:45px'>PROFILE</label><br>
-            <label class='title-name'><b><?php echo $sp_name ?><b></label><br><br>
-            <table width=100%>
-                <tbody  align='center'>
+            <label class='title-name'><b><?php echo $sp_name ?></b></label><br><br>
+            <table width=100% cellpadding='5'>
+                <tbody  align='left'>
                         <tr>
-                            <td width=30%></b>RATINGS<b></td>
-                            <td>B</td>
+                            <td width=30%><b>RATINGS</b></td>
+                            <td><?php  
+                                for($i=0;$i<$avg_rating;$i++){
+                                    echo "<font size = '6px' color='orange'>★</font>";
+                                }
+                                for($i=1;$i<=5-$avg_rating;$i++){
+                                    echo "<font size = '6px' color='grey'>★</font>";
+                                }
+                                ?>
+                            </td>
                         </tr>
                         <tr>
                             <td><b>LOCATION</b></td>
                             <td><?php echo $sp_country ?></td>
                         </tr>
                         <tr>
-                            <td><b>SPEACIALITY</b></td>
-                            <td>UK</td>
+                            <td><b>STATE</b></td>
+                            <td><?php echo $sp_state ?></td>
                         </tr>
                         <tr>
                             <td><b>ABOUT</b></td>
                             <td align="justify"><?php echo $sp_intro ?></td>
                         </tr>
                         <tr>
-                            <td><b>WEBSITE</b></td>
-                            <td>B</td>
+                            <td><b>EMAIL</b></td>
+                            <td><?php echo $sp_email ?></td>
                         </tr>
                         <tr>
                             <td><b>FEEDBACK</b></td>
-                            <td>B</td>
+                            <td><?php
+                                    $i=0;
+                                    foreach($comments as $comment){
+                                        if($i==10){
+                                            break;
+                                        }
+                                        echo "<p class='comment'>".$comment."</p>";
+                                        $i++;
+                                    }
+                                ?>
+                            </td>
                         </tr>
                 </tbody>
             </table>
             <br>
-            <?php
-                echo "<a class='hire' href='./includes/hire.php?user_id=$user_Id&sp_id=$sp_Id&thread_id=$thread_Id'><b>HIRE!</b></a>"
-            ?>        
+            <center>
+                <?php
+                    echo "<a class='hire' href='./includes/hire.php?user_id=$user_Id&sp_id=$sp_Id&thread_id=$thread_Id'><b>HIRE!</b></a>"
+                ?>
+            </center>
         </div>
     </body>
 </html>

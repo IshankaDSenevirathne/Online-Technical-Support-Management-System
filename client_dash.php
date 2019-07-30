@@ -147,7 +147,7 @@ $clientOccupation=$data['clientOccupation'];
                               $data2=mysqli_fetch_assoc($result2);
                               $thread=$data2['thread'];
                               if($jobstatus){
-                                echo "<button class='hired_active_projects' onclick="."window.location='./includes/user_hired_projects.php?sp_id=$sp_id&thread_id=$thread_id&user_id=$clientId'".">$thread<br></button>";
+                                echo "<button class='hired_active_projects' onclick="."window.location='./includes/user_hired_projects.php?sp_id=$sp_id&thread_id=$thread_id&user_id=$clientId&status=pending'".">$thread<br></button>";
                               }
                             }
                         ?>
@@ -166,7 +166,7 @@ $clientOccupation=$data['clientOccupation'];
                               $data2=mysqli_fetch_assoc($result2);
                               $thread=$data2['thread'];
                               if(!$jobstatus){  
-                                echo "<button class='hired_closed_projects' onclick="."window.location='./includes/user_hired_projects.php?sp_id=$sp_id&thread_id=$thread_id&user_id=$clientId'".">$thread<br></button>";
+                                echo "<button class='hired_closed_projects' onclick="."window.location='./includes/user_hired_projects.php?sp_id=$sp_id&thread_id=$thread_id&user_id=$clientId&status=solved'".">$thread<br></button>";
                               }
                             }
                         ?>

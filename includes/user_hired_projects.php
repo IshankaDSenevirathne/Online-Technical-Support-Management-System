@@ -2,6 +2,7 @@
         $thread_id=$_REQUEST['thread_id'];
         $sp_id=$_REQUEST['sp_id'];
         $client_id=$_REQUEST['user_id'];
+        $j_status=$_REQUEST['status'];
     
         $db['db_host']='localhost';
         $db['db_user']='root';
@@ -79,6 +80,16 @@
             <form method='post' action=<?php echo 'chatbox_cli.php?thread_id='.$thread_id.'&sp_id='.$sp_id.'&client_id='.$client_id?>>
                 <textarea name='sp_comment' placeholder='Enter your comments here'></textarea><br>
                 <button class='btn' name='submit_post'>SUBMIT</button><br>
+                <center>
+                    <?php
+                        if($j_status=='pending'){
+                            echo "<button class='btn_status' name='set_as_solved'>SET PROJECT AS SOLVED</button>";
+                        }else if($j_status=='solved'){
+                            echo "<button class='btn_status' disabled><img src='../Images/check-tick-icon-141462.png'></button>";
+                        }
+                        mysqli_close($connection);
+                    ?>
+                </center>
             </form>
         </div>
     </body>

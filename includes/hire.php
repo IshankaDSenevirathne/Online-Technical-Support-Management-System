@@ -29,7 +29,7 @@
     $result=mysqli_query($connection,$query);
     if($result){
         $id=mysqli_insert_id($connection);
-        header("location:user_hired_projects.php?user_id=$user_Id&thread_id=$thread_Id&sp_id=$sp_Id");
+        header("location:user_hired_projects.php?user_id=$user_Id&thread_id=$thread_Id&sp_id=$sp_Id&status=pending");
     }else{
         echo "Error: " . $query . "" . mysqli_error($connection);
     }

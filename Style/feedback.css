@@ -1,0 +1,111 @@
+body{
+    margin-top:5%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:#F3F3F3;
+    margin-left:20%;
+    margin-right:20%;
+    margin-bottom:10%;    
+}
+.navbar{
+    height:43px;
+    background-color:white;
+    border-bottom:1px solid #EDEDED;
+    color:#979797;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    overflow:hidden;
+
+}
+.navbar input{
+    width:50%;
+    outline-color:black;
+    background-color:white;
+    padding-top:4px;
+    border:0.5px solid #E3E3E3;
+    padding-left:4px;
+    margin-right:80px;
+    padding-bottom:4px;
+    font-size:15px;
+
+}
+.navbar img{
+    cursor:pointer;
+}
+.navbar a{ 
+    padding-right:10px;
+    text-align:center;
+}
+.navbar a:hover{
+    color:black;
+    cursor: pointer;
+}
+.navbar h3{
+    margin-right:15px;
+    padding-left:10px;
+    
+}
+.navbar h3:hover{
+    color:#8C8C8C;
+    cursor:pointer;
+}
+.content_section{
+    background-color:white;
+    padding:10px 20px 10px 20px;
+}
+.rate {
+    float:left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+textarea{
+        margin:20px 10px 20px 0px;
+        width:100%;
+        height:100px;
+}
+.submit{
+    width:10%;
+    height:30px;
+    background-color: #D5F5E3;
+    border:none;
+    outline:none;
+    transition:0.3s;
+}
+.submit:hover{
+    background-image: url('../Images/check-tick-icon-141462.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #36C274;
+    color:transparent;
+}

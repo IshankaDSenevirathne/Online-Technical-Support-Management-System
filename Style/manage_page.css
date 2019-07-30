@@ -147,3 +147,18 @@ textarea{
     background-color: #D65454;
     color:transparent;
 }
+.btn_status{
+    width:20%;
+    height:30px;
+    background-color: #D5F5E3;
+    border:none;
+    outline:none;
+    transition:0.3s;
+}
+.btn_status:hover{
+    background-image: url('../Images/check-tick-icon-141462.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #36C274;
+    color:transparent;
+}
