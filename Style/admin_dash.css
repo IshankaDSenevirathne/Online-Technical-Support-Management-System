@@ -6,6 +6,15 @@ body{
     margin-bottom:10%;
     background-color:#F3F3F3;
 }
+.logout{
+    background-color:transparent;
+    color:#979797;
+    border:none;
+    outline:none;
+}
+.logout:hover{
+    color: red;
+}
 .navbar{
     height:43px;
     background-color:white;
@@ -16,19 +25,6 @@ body{
     left:0;
     width:100%;
     overflow:hidden;
-
-}
-.navbar input{
-    width:50%;
-    outline-color:black;
-    background-color:white;
-    padding-top:4px;
-    border:0.5px solid #E3E3E3;
-    border-radius:4px;
-    padding-left:4px;
-    margin-right:80px;
-    padding-bottom:4px;
-    font-size:15px;
 
 }
 .navbar img{
@@ -58,4 +54,32 @@ body{
 .content_section{
     background-color:white;
     padding:10px 20px 10px 20px;
+}
+.table_data,.table_data td{
+    border:1px solid #E3E3E3;
+    font-size:11px;
+}
+.btn_rmv{
+    width:100%;
+    height:18px;
+    background-image: url('../Images/kisspng-computer-icons-x-mark-check-mark-clip-art-red-x-5ac2fb83ead779.93595710152272781196192.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border:none;
+    outline:none;
+    transition:0.3s;
+}
+.btn_rmv:hover{
+    background-position: center;
+    background-repeat: no-repeat;
+    color:transparent;
+    border-right:2px solid red;
+}
+.table_prof{
+    margin-bottom:20px; 
+    width:100%;
+    height:auto;
+    border-right:10px solid  #FFA600;
+    border-radius:2px;
+    background-color:#F7F7F7;
 }

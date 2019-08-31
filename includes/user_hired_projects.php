@@ -1,7 +1,8 @@
 <?php 
+        session_start();
         $thread_id=$_REQUEST['thread_id'];
         $sp_id=$_REQUEST['sp_id'];
-        $client_id=$_REQUEST['user_id'];
+        $client_id=$_SESSION['ID'];
         $j_status=$_REQUEST['status'];
     
         $db['db_host']='localhost';
@@ -43,14 +44,7 @@
         <!--navbar-->
         <div class='navbar'>
             <h3 style="display:inline;"><a align="center"><img src='../Images/kisspng-robotics-internet-.png' align='center'><font color='#747474'><b>Tech<font color='#519C74' size='5'>RoBoT</b></font></font></a></h3>
-            <a>EXPLORE</a>
-            <a>INNOVATE</a>
-            <a>FORUM</a>
-            <a>USER GUIDE</a>
-            <a>ABOUT</a>
-            <input type='text' placeholder='Search...'>
-            <a>PROFILE</a>
-            <a>NOTIFICATIONS</a>
+            <a href='./logout.php'>LOGOUT</a>
         </div>
         <!--content-->
         <div class='content_section'>
@@ -77,7 +71,7 @@
             ?>
             <br>
             <label><b>SUBMIT YOUR ANSWER/COMMENT</b></label><br>
-            <form method='post' action=<?php echo 'chatbox_cli.php?thread_id='.$thread_id.'&sp_id='.$sp_id.'&client_id='.$client_id?>>
+            <form method='post' action=<?php echo 'chatbox_cli.php?thread_id='.$thread_id.'&sp_id='.$sp_id?>>
                 <textarea name='sp_comment' placeholder='Enter your comments here'></textarea><br>
                 <button class='btn' name='submit_post'>SUBMIT</button><br>
                 <center>

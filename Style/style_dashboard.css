@@ -18,24 +18,16 @@ body{
     overflow:hidden;
 
 }
-.navbar input{
-    width:40%;
-    outline-color:black;
-    background-color:white;
-    padding-top:4px;
-    border:0.5px solid #E3E3E3;
-    padding-left:4px;
-    margin-right:80px;
-    padding-bottom:4px;
-    font-size:15px;
-
-}
 .navbar img{
     cursor:pointer;
 }
-.navbar a{ 
+.navbar a{
     padding-right:10px;
     text-align:center;
+}
+.navbar a:link,a:visited{
+    text-decoration: none;
+    color:#979797;
 }
 .navbar a:hover{
     color:black;
@@ -88,22 +80,21 @@ body{
 .dash_promo{
     background-repeat: no-repeat;
     background-color:white;
-    height:337px;
+    padding:10px;
+    height:auto;
 }
 .section{
     border:2px solid #EDEDED;
     background-color:white;
+    background-image: url('../Images/kisspng-printed-circuit-board-electronic-circuit-computer-robot-circuit-board-5a6fce085c6594.6631800315172766803785.png');
+    background-size: cover;
     padding:10px 10px 10px 10px;
     margin-top:20px;
-    cursor:pointer;
-    transition: 0.2s;
-
 }
-.section h2{
-    display:inline;
+.section2{
+    border:2px solid #EDEDED;
+    background-color:white;
+    background-size: cover;
+    padding:10px 20px 10px 20px;
+    margin-top:20px;
 }
-.section:hover{
-    border-right:10px solid #5274CD;
-    color:#5274CD;
-}
-

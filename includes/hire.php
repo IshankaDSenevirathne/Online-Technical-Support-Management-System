@@ -7,11 +7,12 @@
     foreach($db as $key=>$value){
         define(strtoupper($key),$value);
     }
+    session_start();
     $connection=mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
     if(!$connection){
         die('database connection failed').mysqli_error($connection);
     }
-    $user_Id=$_REQUEST['user_id'];
+    $user_Id=$_SESSION['ID'];
     $sp_Id=$_REQUEST['sp_id'];
     $thread_Id=$_REQUEST['thread_id'];
 
@@ -29,7 +30,7 @@
     $result=mysqli_query($connection,$query);
     if($result){
         $id=mysqli_insert_id($connection);
-        header("location:user_hired_projects.php?user_id=$user_Id&thread_id=$thread_Id&sp_id=$sp_Id&status=pending");
+        header("location:../client_dash.php");
     }else{
         echo "Error: " . $query . "" . mysqli_error($connection);
     }

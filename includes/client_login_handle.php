@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_POST['submit'])){
     $clientUsername=$_POST['clientUsername'];
     $clientPassword=$_POST['clientPassword'];
@@ -19,10 +20,10 @@ if(isset($_POST['submit'])){
     $query="SELECT * FROM client_data WHERE clientUsername='$clientUsername' AND clientPassword='$clientPassword'";
     $result=mysqli_query($connection,$query);
     $data=mysqli_fetch_assoc($result);
-    $id=$data['clientId'];
+    $_SESSION['ID']=$data['clientId'];
     $num=mysqli_num_rows($result);
     if($num==1){
-        header("location:../client_dash.php?id=$id");
+        header("location:../client_dash.php");
     }else{
         echo 'Data retrieving failed'.mysqli_error($connection);
     }

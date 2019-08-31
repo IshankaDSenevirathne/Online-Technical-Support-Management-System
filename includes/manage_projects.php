@@ -1,22 +1,10 @@
 <?php 
+        include './dbConnect.php';
+        session_start();
         $thread_id=$_REQUEST['thread_id'];
-        $sp_id=$_REQUEST['sp_id'];
+        $sp_id=$_SESSION['ID'];
         $client_id=$_REQUEST['client_id'];
         $j_status=$_REQUEST['job_status'];
-
-        $db['db_host']='localhost';
-        $db['db_user']='root';
-        $db['db_pass']='';
-        $db['db_name']='techmanagement';
-    
-        foreach($db as $key=>$value){
-            define(strtoupper($key),$value);
-        }
-        $connection=mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
-        if(!$connection){
-            die("Database connection failed");
-        }
-       
         $query="SELECT * FROM thread_data WHERE id=$thread_id";
         $result=mysqli_query($connection,$query);
         $data2=mysqli_fetch_assoc($result);
@@ -43,14 +31,8 @@
         <!--navbar-->
         <div class='navbar'>
             <h3 style="display:inline;"><a align="center"><img src='../Images/kisspng-robotics-internet-.png' align='center'><font color='#747474'><b>Tech<font color='#519C74' size='5'>RoBoT</b></font></font></a></h3>
-            <a>EXPLORE</a>
-            <a>INNOVATE</a>
-            <a>FORUM</a>
-            <a>USER GUIDE</a>
-            <a>ABOUT</a>
-            <input type='text' placeholder='Search...'>
-            <a>PROFILE</a>
-            <a>NOTIFICATIONS</a>
+            <a href='../sp_dash.php'>PROFILE</a>
+            <a href='logout.php'>LOGOUT</a>
         </div>
         <!--content-->
         <div class='content_section'>
@@ -77,7 +59,7 @@
             ?>
             <br>
             <label><b>SUBMIT YOUR ANSWER/COMMENT</b></label><br>
-            <form method='post' action=<?php echo 'chatbox_sp.php?thread_id='.$thread_id.'&sp_id='.$sp_id.'&client_id='.$client_id?>>
+            <form method='post' action=<?php echo 'chatbox_sp.php?thread_id='.$thread_id.'&client_id='.$client_id?>>
                 <textarea name='sp_comment' placeholder='Enter your comments here'></textarea><br>
                 <button class='btn' name='submit_post'>SUBMIT</button><br>
                 <center>

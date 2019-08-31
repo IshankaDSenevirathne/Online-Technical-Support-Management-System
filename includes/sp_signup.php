@@ -1,5 +1,6 @@
 <?php
 //SERVICE PROVIDER SIGN UP
+session_start();
 if(isset($_POST['submit'])){
     $sp_name=$_POST['sp_name'];
     $sp_password=$_POST['sp_password'];
@@ -27,8 +28,8 @@ if(isset($_POST['submit'])){
     $query="INSERT INTO service_provider_data(sp_name,sp_password,sp_country,sp_tags,sp_email,sp_contact,sp_state,sp_intro,sp_motto)VALUES ('$sp_name','$sp_password','$sp_country','$sp_tags','$sp_email',$sp_contact,'Active','$sp_intro','$sp_motto')";
     $result=mysqli_query($connection,$query);
     if($result){
-        $sp_Id=mysqli_insert_id($connection);
-        header("location:../sp_dash.php?id=$sp_Id");
+        $_SESSION['ID']=mysqli_insert_id($connection);
+        header("location:../sp_dash.php");
     }
     else{
         echo 'Error: '.$query.'<br>'.mysqli_error($connection);

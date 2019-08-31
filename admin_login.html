@@ -7,18 +7,10 @@
     <body>
         <div>
             <div class='navbar'>
-                <h3 style="display:inline;"><a align="center"><img src='./Images/kisspng-robotics-internet-.png' align='center'><font color='#747474'><b>Tech<font color='#519C74' size='5'>NoBoT</b></font></font></a></h3>
-                <a>EXPLORE</a>
-                <a>INNOVATE</a>
-                <a>FORUM</a>
-                <a>USER GUIDE</a>
-                <a>ABOUT</a>
-                <input type='text' placeholder='Search...'>
-                <a>PROFILE</a>
-                <a>NOTIFICATIONS</a>
+                <h3 style="display:inline;"><a align="center" href='./dashboard.html'><img src='./Images/kisspng-robotics-internet-.png' align='center'><font color='#747474'><b>Tech<font color='#519C74' size='5'>NoBoT</b></font></font></a></h3>
             </div>
         </div>
-        <form method='post' action='./includes/sp_login_handle.php'>
+        <form method='post' action='./includes/admin_login_handle.php'>
             <center>
                 <img src='./Images/home-user-icon-1.png'>
                 <div class="login_box">
@@ -26,17 +18,14 @@
                         <h1>LOGIN</h1>
                     </div>
                     <div class="textbox">
-                        <input type="textbox" placeholder="ENTER USERNAME" name="" value=""> 
+                        <input type="textbox" placeholder="ENTER USERNAME" name="admin_Username"> 
                     </div>
                     <div class="textbox">
-                        <input type="password" placeholder="ENTER PASSWORD" name="" value="">
+                        <input type="password" placeholder="ENTER PASSWORD" name="admin_Password">
                     </div>
                     <div>
-                        <input class="btn" type="button" name="" value="SIGN IN">
-                    </div>
-                    <div>
-                        <h4>SIGN IN FREE TO GET SOLUTIONS FROM PROFESSIONALS</h4>
-                    </div>               
+                        <button type='submit' class="btn" name="submit">LOGIN</button>
+                    </div>              
                 </div>
         </center>
         </form>

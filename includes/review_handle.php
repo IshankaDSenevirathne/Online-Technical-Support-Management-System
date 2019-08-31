@@ -1,9 +1,9 @@
 <?php
-
+session_start();
 if(isset($_POST['submit'])){
     
     $sp_id=$_REQUEST['sp_id'];
-    $client_id=$_REQUEST['user_id'];
+    $client_id=$_SESSION['ID'];
     $comment=','.$_POST['user_comment'];
     $rating=$_POST['rate'];
 
@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
     $query="UPDATE service_provider_data SET total_ratings=total_ratings+$rating,review_count=review_count+1,comments=CONCAT(comments,'$comment') WHERE sp_Id=$sp_id";
     $result=mysqli_query($connection,$query);
     if($result){
-        header("location:../client_dash.php?id=$client_id");
+        header("location:../client_dash.php");
         }
     mysqli_close($connection);
 }

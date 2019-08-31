@@ -1,17 +1,7 @@
 <?php 
-$db['db_host']='localhost';
-$db['db_user']='root';
-$db['db_pass']='';
-$db['db_name']='techmanagement';
-
-foreach($db as $key=>$value){
-    define(strtoupper($key),$value);
-}
-$connection=mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
-if(!$connection){
-    die('Database connection error');
-}
-$clientId=$_REQUEST['id'];
+include './includes/dbConnect.php';
+session_start();
+$clientId=$_SESSION['ID'];
 $query="SELECT * FROM thread_data WHERE userId=$clientId";
 $result1=mysqli_query($connection,$query);
 $query="SELECT * FROM thread_data";
@@ -35,18 +25,12 @@ if(isset($_POST['sort_thread'])){
             <div>
                 <div class='navbar'>
                     <h3 style="display:inline;"><a align="center"><img src='./Images/kisspng-robotics-internet-.png' align='center'><font color='#747474'><b>Tech<font color='#5274CD' size='5'>NoBoT</b></font></font></a></h3>
-                    <a>EXPLORE</a>
-                    <a>INNOVATE</a>
-                    <a>FORUM</a>
-                    <a>USER GUIDE</a>
-                    <a>ABOUT</a>
-                    <input type='text' placeholder='Search...'>
-                    <a>PROFILE</a>
-                    <a>NOTIFICATIONS</a>
+                    <a href='./client_dash.php'>PROFILE</a>
+                    <a href='./includes/logout.php'>LOGOUT</a>
                 </div>
            </div>
            <div style='background-color:white;'>
-                <h2 align='center'>THREADWALL</h2>
+                <h2 align='center'>QUERY WALL</h2>
                 <div style='padding:10px 10px 15px 10px;margin:10px 40px 15px 40px;'>
                     <h3>POST A THREAD</h3>
                     <form method='post' action='./includes/threadwall_push_request.php<?php echo '?id='.$clientId; ?>'>
@@ -70,6 +54,7 @@ if(isset($_POST['sort_thread'])){
                             <option value='EP'>Engineering Physics</option>
                             <option value='ARD'>Architecture/Design</option>
                             <option value='TE'>Textile Engineering</option>
+                            <option value='PH'>Physics</option>
                             <option value='HHE'>House Hold Electricity/Electricals</option>
                             <option value='HHG'>House Hold Gardening</option>
                             <option value='HHG'>Other</option>
@@ -85,32 +70,6 @@ if(isset($_POST['sort_thread'])){
                             <option value='all_threads' name='all_threads'>All Threads</option>
                             <option value='my_threads' name='my_threads'>My Threads</option>
                         </select>
-                        <br><br><label>Type:</label><br>
-                        <select style='width:100%;height:30px;'>
-                                <option value='Solved'>Solved</option>
-                                <option value='Unsolved'>Unsolved</option>
-                                <option value='all'>All</option>
-                        </select>
-                        <br><br><label>Category:</label><br>
-                        <select style='width:100%;height:30px;'>
-                            <option value='EE'  selected='selected'>Electrical/Electronic Engineering</option>
-                            <option value='ME'>Mechanical Engineering</option>
-                            <option value='AE'>Aerospace Engineering</option>
-                            <option value='RE'>Robotics/Mechatronics Engineering</option>
-                            <option value='CE'>Civil Engineering</option>
-                            <option value='ME'>Mechanical Engineering</option>
-                            <option value='HH'>Agriculture</option>
-                            <option value='BM'>Bio-Medical Engineering</option>
-                            <option value='SE'>Software Engineering</option>
-                            <option value='COM'>Computer Engineering</option>
-                            <option value='CS'>Computer Science</option>
-                            <option value='EP'>Engineering Physics</option>
-                            <option value='ARD'>Architecture/Design</option>
-                            <option value='TE'>Textile Engineering</option>
-                            <option value='HHE'>House Hold Electricity/Electricals</option>
-                            <option value='HHG'>House Hold Gardening</option>
-                            <option value='HHG'>Other</option>
-                        </select>
                         <button type='submit' name='sort_thread' class='btn'>FILTER</button>
                     </form>
                 <div>
@@ -123,9 +82,6 @@ if(isset($_POST['sort_thread'])){
                                 <a href="."./com_page.php?id=$thread_id"."><i>".$threadTitle.'</i></a><br>['.$thread_date.']</div><br>';
                     }
                 ?>
-                <div align='left' class='ground_style_solved'>
-                    <a>Arduino I2C Explained</a>
-                </div>
                 <br><br><br>
             </div>
         </body>

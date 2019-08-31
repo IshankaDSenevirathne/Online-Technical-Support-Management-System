@@ -6,6 +6,15 @@ body{
     margin-bottom:10%;
     background-color:#F3F3F3;
 }
+.logout{
+    background-color:transparent;
+    color:#979797;
+    border:none;
+    outline:none;
+}
+.logout:hover{
+    color: red;
+}
 .navbar{
     height:43px;
     background-color:white;
@@ -16,19 +25,6 @@ body{
     left:0;
     width:100%;
     overflow:hidden;
-
-}
-.navbar input{
-    width:50%;
-    outline-color:black;
-    background-color:white;
-    padding-top:4px;
-    border:0.5px solid #E3E3E3;
-    border-radius:4px;
-    padding-left:4px;
-    margin-right:80px;
-    padding-bottom:4px;
-    font-size:15px;
 
 }
 .navbar img{
@@ -57,7 +53,11 @@ body{
 }
 table{
     margin-bottom:20px; 
+    width:100%;
     height:auto;
+    border-right:10px solid  #36C274;
+    border-radius:2px;
+    background-color:#F7F7F7;
 }
 input,textarea,select{
     outline-color:black;
@@ -99,6 +99,7 @@ input,textarea,select{
 .active_projects{
     font-size: 15px;
     width:100%;
+    margin:5px; 
     background-color:white;
     padding:10px; 
     border:1px solid #F7F7F7;
@@ -114,6 +115,7 @@ input,textarea,select{
 .closed_projects{
     font-size: 15px;
     width:100%;
+    margin:5px; 
     background-color:white;
     padding:10px; 
     border:1px solid #F7F7F7;
@@ -125,4 +127,19 @@ input,textarea,select{
 .closed_projects:hover{
     border-left:10px solid #D65454;
     background-color:#F7F7F7;
+}
+.btn{
+    width:10%;
+    height:30px;
+    background-color: #EBECAE;
+    border:none;
+    outline:none;
+    transition:0.3s;
+}
+.btn:hover{
+    background-image: url('../Images/shipping-icon-3492.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #F3F57A;
+    color:transparent;
 }

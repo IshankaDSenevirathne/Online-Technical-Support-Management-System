@@ -1,6 +1,7 @@
 <?php
+session_start();
 $thread_id=$_REQUEST['thread_id'];
-$sp_id=$_REQUEST['sp_id'];
+$sp_id=$_SESSION['ID'];
 $client_id=$_REQUEST['client_id'];
 $post=$_POST['sp_comment'];
 
@@ -20,7 +21,7 @@ if(isset($_POST['submit_post'])){
     $query="INSERT INTO chat_data(thread_id,post,sp_id,client_id)VALUES ($thread_id,'$post',$sp_id,$client_id)";
     $result=mysqli_query($connection,$query);
     if($result){
-        header("location:manage_projects.php?thread_id=$thread_id&sp_id=$sp_id&client_id=$client_id&job_status=pending");
+        header("location:manage_projects.php?thread_id=$thread_id&client_id=$client_id&job_status=pending");
         }
     mysqli_close($connection);
     }
@@ -42,7 +43,7 @@ else if(isset($_POST['accept_job'])){
     $result=mysqli_query($connection,$query);
     if($result){
     
-    header("location:manage_projects.php?thread_id=$thread_id&sp_id=$sp_id&client_id=$client_id&job_status=accepted");
+    header("location:manage_projects.php?thread_id=$thread_id&client_id=$client_id&job_status=accepted");
     }
     mysqli_close($connection);
 }
@@ -65,7 +66,7 @@ else if(isset($_POST['decline_job'])){
     $query="DELETE FROM chat_data WHERE thread_id = $thread_id";
     $result=mysqli_query($connection,$query);
     if($result){
-    header("location:../sp_dash.php?id=$sp_id");
+    header("location:../sp_dash.php");
     }
     mysqli_close($connection);
 }    

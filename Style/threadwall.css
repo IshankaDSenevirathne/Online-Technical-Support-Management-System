@@ -18,24 +18,16 @@ body{
     overflow:hidden;
 
 }
-.navbar input{
-    width:50%;
-    outline-color:black;
-    background-color:white;
-    padding-top:4px;
-    border:0.5px solid #E3E3E3;
-    padding-left:4px;
-    margin-right:80px;
-    padding-bottom:4px;
-    font-size:15px;
-
-}
 .navbar img{
     cursor:pointer;
 }
-.navbar a{ 
+.navbar a{
     padding-right:10px;
     text-align:center;
+}
+.navbar a:link,a:visited{
+    text-decoration: none;
+    color:#979797;
 }
 .navbar a:hover{
     color:black;
@@ -44,7 +36,6 @@ body{
 .navbar h3{
     margin-right:15px;
     padding-left:10px;
-    
 }
 .navbar h3:hover{
     color:#8C8C8C;

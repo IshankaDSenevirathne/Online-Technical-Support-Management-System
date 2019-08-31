@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // CLIENT TABLE SIGN UP
 if(isset($_POST['submit'])){
     $clientFirstname=$_POST['clientFirstname'];
@@ -33,7 +33,8 @@ if(isset($_POST['submit'])){
     $result=mysqli_query($connection,$query);
     if($result){
         $id=mysqli_insert_id($connection);
-        header("location:../client_dash.php?id=$id");
+        $_SESSION['ID']=$id;
+        header("location:../client_dash.php");
     }else{
         echo "Error: " . $query . "" . mysqli_error($connection);
     }

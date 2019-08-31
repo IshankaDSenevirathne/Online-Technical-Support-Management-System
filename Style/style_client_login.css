@@ -31,9 +31,13 @@ body{
 .navbar img{
     cursor:pointer;
 }
-.navbar a{ 
+.navbar a{
     padding-right:10px;
     text-align:center;
+}
+.navbar a:link,a:visited{
+    text-decoration: none;
+    color:#979797;
 }
 .navbar a:hover{
     color:black;

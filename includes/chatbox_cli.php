@@ -1,9 +1,10 @@
 <?php
+session_start();
 if(isset($_POST['submit_post'])){
     
     $thread_id=$_REQUEST['thread_id'];
     $sp_id=$_REQUEST['sp_id'];
-    $client_id=$_REQUEST['client_id'];
+    $client_id=$_SESSION['ID'];
     $post=$_POST['sp_comment'];
 
     $db['db_host']='localhost';
@@ -21,7 +22,7 @@ if(isset($_POST['submit_post'])){
     $query="INSERT INTO chat_data(thread_id,post,sp_id,client_id,indicator)VALUES ($thread_id,'$post',$sp_id,$client_id,'1')";
     $result=mysqli_query($connection,$query);
     if($result){
-        header("location:user_hired_projects.php?thread_id=$thread_id&sp_id=$sp_id&user_id=$client_id&status=pending");
+        header("location:user_hired_projects.php?thread_id=$thread_id&sp_id=$sp_id&status=pending");
         }
     mysqli_close($connection);
     }
@@ -29,7 +30,7 @@ if(isset($_POST['set_as_solved'])){
      
     $thread_id=$_REQUEST['thread_id'];
     $sp_id=$_REQUEST['sp_id'];
-    $client_id=$_REQUEST['client_id'];
+    $client_id=$_SESSION['ID'];
     $post=$_POST['sp_comment'];
 
     $db['db_host']='localhost';
@@ -47,7 +48,7 @@ if(isset($_POST['set_as_solved'])){
     $query="UPDATE projects SET jobstatus=0 WHERE thread_id=$thread_id";
     $result=mysqli_query($connection,$query);
     if($result){
-        header("location:feedback.php?thread_id=$thread_id&sp_id=$sp_id&user_id=$client_id");
+        header("location:feedback.php?thread_id=$thread_id&sp_id=$sp_id");
         }
     mysqli_close($connection);
 }

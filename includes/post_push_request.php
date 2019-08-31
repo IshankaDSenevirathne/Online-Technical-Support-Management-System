@@ -1,8 +1,9 @@
 <?php
+session_start();
 if(isset($_POST['submit_post'])){
     
     $thread_id=$_REQUEST['thread_id'];
-    $sp_id=$_REQUEST['sp_id'];
+    $sp_id=$_SESSION['ID'];
     $post=$_POST['sp_comment'];
     
     $db['db_host']='localhost';
@@ -20,7 +21,7 @@ if(isset($_POST['submit_post'])){
     $query="INSERT INTO answer_data(thread_id,post,sp_id)VALUES ($thread_id,'$post',$sp_id)";
     $result=mysqli_query($connection,$query);
     if($result){
-        header("location:../com_page_sp.php?thread_id=$thread_id&sp_id=$sp_id");
+        header("location:../com_page_sp.php?thread_id=$thread_id");
         }
     mysqli_close($connection);
     }

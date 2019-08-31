@@ -32,6 +32,7 @@ if(isset($_POST['submit'])){
     $result=mysqli_query($connection,$query);
     if($result){
         echo 'admin registration successfull';
+        header("location:../admin_dash.php");
     }else{
         echo 'Error: '.$query.'<br>'.mysqli_error($connection);
     }

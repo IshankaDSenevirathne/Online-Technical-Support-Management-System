@@ -1,21 +1,8 @@
 <?php
-    $db['db_host']='localhost';
-    $db['db_user']='root';
-    $db['db_pass']='';
-    $db['db_name']='techmanagement';
-
-    $user_Id=$_REQUEST['user_id'];
+    include './includes/dbConnect.php';
+    session_start();
+    $user_Id=$_SESSION['ID'];
     $thread_Id=$_REQUEST['thread_id'];
-   
-    //fetch service provider data
-
-    foreach($db as $key=>$value){
-        define(strtoupper($key),$value);
-    }
-    $connection=mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
-    if(!$connection){
-        die('database connection failed').mysqli_error($connection);
-    }
     $sp_Id=$_REQUEST['sp_id'];
     $query="SELECT * FROM service_provider_data WHERE sp_Id=$sp_Id";
     $result=mysqli_query($connection,$query);
@@ -27,7 +14,11 @@
     $sp_state=$data['sp_state'];
     $ratings=$data['total_ratings'];
     $count=$data['review_count'];
-    $avg_rating=ceil($ratings/$count);
+    if($count==0){
+        $avg_rating=0;    
+    }else{
+        $avg_rating=ceil($ratings/$count);
+    }
     $comments=explode(',',$data['comments']);
     unset($comments[0]);
 
@@ -37,19 +28,21 @@
 <html>
     <head>
         <link rel='stylesheet' href='./Style/sp_profilecard.css'>
+        <script>
+            function logout(){
+                d=confirm("you will be logged out");
+                if (d==true) {
+                    window.location='./includes/logout.php';
+                }
+            }
+        </script>
     </head>
     <body>
          <!--navbar-->
          <div class='navbar'>
             <h3 style="display:inline;"><a align="center"><img src='./Images/kisspng-robotics-internet-.png' align='center'><font color='#747474'><b>Tech<font color='#519C74' size='5'>NoBoT</b></font></font></a></h3>
-            <a>EXPLORE</a>
-            <a>INNOVATE</a>
-            <a>FORUM</a>
-            <a>USER GUIDE</a>
-            <a>ABOUT</a>
-            <input type='text' placeholder='Search...'>
-            <a>PROFILE</a>
-            <a>NOTIFICATIONS</a>
+            <a href='./client_dash.php'>PROFILE</a>
+            <button class='logout' onclick="logout()">LOGOUT</button>
         </div>
         <!--Service provider data-->
         <div class='main-container'>
@@ -104,7 +97,7 @@
             <br>
             <center>
                 <?php
-                    echo "<a class='hire' href='./includes/hire.php?user_id=$user_Id&sp_id=$sp_Id&thread_id=$thread_Id'><b>HIRE!</b></a>"
+                    echo "<a class='hire' href='./includes/hire.php?&sp_id=$sp_Id&thread_id=$thread_Id'><b>HIRE!</b></a>"
                 ?>
             </center>
         </div>

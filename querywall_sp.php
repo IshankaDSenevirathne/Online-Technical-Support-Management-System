@@ -1,17 +1,7 @@
 <?php 
-$db['db_host']='localhost';
-$db['db_user']='root';
-$db['db_pass']='';
-$db['db_name']='techmanagement';
-
-foreach($db as $key=>$value){
-    define(strtoupper($key),$value);
-}
-$connection=mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
-if(!$connection){
-    die('Database connection error');
-}
-$sp_Id=$_REQUEST['id'];
+include './includes/dbConnect.php';
+session_start();
+$sp_Id=$_SESSION['ID'];
 
 $query="SELECT * FROM thread_data";
 $result=mysqli_query($connection,$query);
@@ -26,50 +16,12 @@ mysqli_close($connection);
             <div>
                 <div class='navbar'>
                     <h3 style="display:inline;"><a align="center"><img src='./Images/kisspng-robotics-internet-.png' align='center'><font color='#747474'><b>Tech<font color='#5274CD' size='5'>NoBoT</b></font></font></a></h3>
-                    <a>EXPLORE</a>
-                    <a>INNOVATE</a>
-                    <a>FORUM</a>
-                    <a>USER GUIDE</a>
-                    <a>ABOUT</a>
-                    <input type='text' placeholder='Search...'>
-                    <a>PROFILE</a>
-                    <a>NOTIFICATIONS</a>
+                    <a href='sp_dash.php'>PROFILE</a>
+                    <a href='./includes/logout.php'>LOGOUT</a>
                 </div>
            </div>
            <div style='background-color:white;'>
-                <h2 align='center'>THREADWALL</h2>
-                <div style='padding:10px 10px 15px 10px;margin:10px 40px 15px 40px;'>
-                    </form>
-                    <form action="querywall_client.php<?php echo '?id='.$clientId;?>" method='post'>
-                        <h3>SORT</h3>
-                        <br><br><label>Category:</label><br>
-                        <select style='width:100%;height:30px;'>
-                            <option value='EE'  selected='selected'>Electrical/Electronic Engineering</option>
-                            <option value='ME'>Mechanical Engineering</option>
-                            <option value='AE'>Aerospace Engineering</option>
-                            <option value='RE'>Robotics/Mechatronics Engineering</option>
-                            <option value='CE'>Civil Engineering</option>
-                            <option value='ME'>Mechanical Engineering</option>
-                            <option value='HH'>Agriculture</option>
-                            <option value='BM'>Bio-Medical Engineering</option>
-                            <option value='SE'>Software Engineering</option>
-                            <option value='COM'>Computer Engineering</option>
-                            <option value='CS'>Computer Science</option>
-                            <option value='EP'>Engineering Physics</option>
-                            <option value='ARD'>Architecture/Design</option>
-                            <option value='TE'>Textile Engineering</option>
-                            <option value='HHE'>House Hold Electricity/Electricals</option>
-                            <option value='HHG'>House Hold Gardening</option>
-                            <option value='HHG'>Other</option>
-                        </select>
-                        <br><br><label>Type:</label><br>
-                        <select style='width:100%;height:30px;'>
-                                <option value='Solved'>Solved</option>
-                                <option value='Unsolved'>Unsolved</option>
-                                <option value='all'>All</option>
-                        </select>
-                        <button type='submit' name='sort_thread' class='btn'>FILTER</button>
-                    </form>
+                <h2 align='center'>QUERY WALL</h2>
                 <div>
                 <?php
                    while($data=mysqli_fetch_array($result)){
@@ -77,12 +29,9 @@ mysqli_close($connection);
                     $thread_id=$data['id'];
                     $thread_date=$data['thread_date'];
                     echo "<div align='left' class='ground_style_solved'>    
-                            <a href="."./com_page_sp.php?thread_id=".$thread_id.'&sp_id='.$sp_Id."><i>".$threadTitle.'</i></a><br>['.$thread_date.']</div><br>';
+                            <a href="."./com_page_sp.php?thread_id=".$thread_id."><i>".$threadTitle.'</i></a><br>['.$thread_date.']</div><br>';
                 }
                 ?>
-                <div align='left' class='ground_style_unsolved'>
-                    <a>Arduino I2C Explained</a>
-                </div>
                 <br><br><br>
             </div>
         </body>
