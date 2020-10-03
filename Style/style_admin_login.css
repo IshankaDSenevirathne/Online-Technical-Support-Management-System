@@ -1,7 +1,7 @@
 body{
     margin-top:10%;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color:#F3F3F3;    
+    background-color:#078e92;    
 }
 .navbar{
     height:43px;
@@ -50,6 +50,7 @@ body{
     width:100%;
     font-size:20px;
     border:1px solid #323332;
+    background-color: white;
     margin-top:10px;
 }
 .textbox input{
@@ -74,4 +75,6 @@ body{
 }
 .btn:hover{
     opacity:0.9;
+    background-color:#4d504d ;
+    border-color: #323332;
 }
